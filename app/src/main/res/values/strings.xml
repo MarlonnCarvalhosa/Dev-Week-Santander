@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Dev Week Santander</string>
+    <string name="ola">Olá,</string>
+    <string name="saldo_disponivel">Saldo disponível</string>
+    <string name="saldo_limite">Saldo + Limite:</string>
+    <string name="ver_extrato">Ver extrato</string>
+</resources>
