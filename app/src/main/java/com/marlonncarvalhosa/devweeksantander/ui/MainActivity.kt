@@ -1,13 +1,12 @@
-package com.marlonncarvalhosa.devweeksantander
+package com.marlonncarvalhosa.devweeksantander.ui
 
 import android.os.Bundle
-import android.view.Menu
 import android.view.View
 import android.view.animation.LinearInterpolator
 import android.view.animation.RotateAnimation
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.marlonncarvalhosa.devweeksantander.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 
