@@ -4,4 +4,8 @@
     <string name="saldo_disponivel">Saldo disponível</string>
     <string name="saldo_limite">Saldo + Limite:</string>
     <string name="ver_extrato">Ver extrato</string>
+    <string name="pagar">Pagar</string>
+    <string name="transferir">Transferir</string>
+    <string name="recarga">Recarga</string>
+    <string name="cart_o_final">Cartão final</string>
 </resources>

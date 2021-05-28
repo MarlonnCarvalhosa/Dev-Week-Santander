@@ -1,6 +1,7 @@
 package com.marlonncarvalhosa.devweeksantander
 
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
 import android.view.animation.LinearInterpolator
 import android.view.animation.RotateAnimation
@@ -16,12 +17,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        cv_pagar.setOnClickListener{}
+        cv_recarga.setOnClickListener{}
+        cv_transferir.setOnClickListener{}
+
         iv_saldo_hide.setOnClickListener(View.OnClickListener {
             hideBalance()
         })
 
         iv_update_saldo.setOnClickListener {
             rotateRefreshSaldo()
+            tv_saldo.text = "R$ 2.380,00"
         }
 
     }
@@ -45,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         rotate.duration = 500
         rotate.interpolator = LinearInterpolator()
         iv_update_saldo.startAnimation(rotate)
+
     }
 
     private fun rotatioArrowHide(from: Float, to: Float) {
