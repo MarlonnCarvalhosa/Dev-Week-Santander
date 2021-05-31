@@ -6,16 +6,26 @@ import android.view.animation.LinearInterpolator
 import android.view.animation.RotateAnimation
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.marlonncarvalhosa.devweeksantander.R
+import com.marlonncarvalhosa.devweeksantander.model.Conta
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var mainViewModel: MainViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        updataSaldo()
+        buscarContaCliente()
+
+        // Efeito click
         cv_pagar.setOnClickListener{}
         cv_recarga.setOnClickListener{}
         cv_transferir.setOnClickListener{}
@@ -24,11 +34,28 @@ class MainActivity : AppCompatActivity() {
             hideBalance()
         })
 
+    }
+
+    private fun updataSaldo(){
         iv_update_saldo.setOnClickListener {
             rotateRefreshSaldo()
             tv_saldo.text = "R$ 2.380,00"
         }
+    }
 
+    private fun buscarContaCliente(){
+        mainViewModel.buscarContaCliente().observe(this, Observer { result ->
+            bindOnView(result)
+        })
+    }
+
+    private fun bindOnView(conta: Conta){
+        tv_nome.text = conta.cliente.nome
+        tv_agencia.text = conta.agencia
+        tv_conta.text = conta.numero
+        tv_saldo.text = conta.saldo
+        tv_valor_limite_saldo.text = conta.limite
+        tv_numero_conta_final.text = conta.cartao.numeroCartao
     }
 
     private fun hideBalance() {

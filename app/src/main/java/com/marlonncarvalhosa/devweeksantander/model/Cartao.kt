@@ -1,4 +1,3 @@
 package com.marlonncarvalhosa.devweeksantander.model
 
-class Cartao {
-}
+data class Cartao (val numeroCartao: String)

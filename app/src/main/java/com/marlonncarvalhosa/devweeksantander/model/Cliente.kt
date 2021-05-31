@@ -1,4 +1,3 @@
 package com.marlonncarvalhosa.devweeksantander.model
 
-class Cliente {
-}
+data class Cliente (val nome: String)
